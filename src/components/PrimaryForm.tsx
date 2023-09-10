@@ -210,7 +210,7 @@ const PrimaryForm = () => {
     return (
         <form onSubmit={handleSubmit(onSubmit)} className="mt-12 border-2 flex flex-col min-h-48 my-4 rounded-md max-w-[850px] mx-auto">
             <div className='h-2/3 flex'>
-                <div className='w-32'>
+                <div className='m-2 w-[128px] h-[128px]'>
                     {session && <ProfilePicture username={session!.user!.email as string} />}
                 </div>
                 <div className="ml-2 flex flex-col w-full">
@@ -219,12 +219,12 @@ const PrimaryForm = () => {
                 <textarea {...register("text")} placeholder="Escribe algo acá" className='w-full h-48 p-2 placeholder:text-2xl rounded-xl shadow-md my-2 ' />
                 </div> 
             </div>
-            <div className={`border-t-2 p-4 bg-stone-100 ${moduleOpen() ? "min-h-48" : "h-1/3"}`}>
+            <div className={`border-t-2 p-4 bg-cyan-100 ${moduleOpen() ? "min-h-48" : "h-1/3"}`}>
 
                 <div className=" flex gap-4">
                     <div >
                         <button className="h-8" onClick={handleInputActivation}>
-                            <FontAwesomeIcon className="h-full text-orange-600 cursor-pointer hover:text-orange-500 transition-all" icon={faCamera} />
+                            <FontAwesomeIcon className="h-full text-indigo-600 cursor-pointer hover:text-indigo-500 transition-all" icon={faCamera} />
                         </button>
                         <input
                             accept="image/png, image/jpeg, video/mp4"
@@ -240,18 +240,18 @@ const PrimaryForm = () => {
                     </div>
                     <div  >
                         <button className="h-8 " onClick={(e) => { e.preventDefault(); toggleOpenModule("tags") }}>
-                            <FontAwesomeIcon className={`h-full cursor-pointer hover:text-orange-500 transition-all ${tagInputVisibility ? "text-orange-900" : "text-orange-600"} `} icon={faTag} />
+                            <FontAwesomeIcon className={`h-full cursor-pointer hover:text-indigo-500 transition-all ${tagInputVisibility ? "text-indigo-900" : "text-indigo-600"} `} icon={faTag} />
                         </button>
                     </div>
                     <div  >
                         <button className="h-8 " onClick={(e) => { e.preventDefault(); toggleOpenModule("links") }}>
-                            <FontAwesomeIcon className="h-full text-orange-600 cursor-pointer hover:text-orange-500 transition-all " icon={faLink} />
+                            <FontAwesomeIcon className="h-full text-indigo-600 cursor-pointer hover:text-indigo-500 transition-all " icon={faLink} />
                         </button>
                     </div>
 
                     <div className="ml-auto mr-4" >
                         <button className="h-8 " disabled={submitBtnDisabled} type="submit">
-                            <FontAwesomeIcon className="h-full text-orange-600 cursor-pointer hover:text-orange-500 transition-all " icon={faPaperPlane} />
+                            <FontAwesomeIcon className="h-full text-indigo-600 cursor-pointer hover:text-indigo-500 transition-all " icon={faPaperPlane} />
                         </button>
                     </div>
                 </div>
